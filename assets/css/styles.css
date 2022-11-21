@@ -163,6 +163,10 @@ li a:hover,
   left: 3px !important;
 }
 
+.werk-infos {
+  padding-left: 16px;
+}
+
 @media (max-width: 1920px) {
   .swiper-button-next {
     right: 41px !important;
