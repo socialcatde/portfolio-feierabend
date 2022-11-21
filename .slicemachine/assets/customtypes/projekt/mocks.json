@@ -1,0 +1,32 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "projekt",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "projektname": [
+      {
+        "type": "paragraph",
+        "text": "Mollit Lorem reprehenderit quis in eu elit nisi magna mollit.",
+        "spans": []
+      }
+    ],
+    "kategorie_projekt": {
+      "id": "mock_document_id",
+      "link_type": "Document",
+      "type": "projektkategorie",
+      "tags": [],
+      "lang": "en-us",
+      "slug": null,
+      "first_publication_date": "1970-01-01T00:00:01+0000",
+      "last_publication_date": "1970-01-01T01:00:00+0000"
+    }
+  }
+}

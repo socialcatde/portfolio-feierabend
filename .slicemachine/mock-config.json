@@ -1,0 +1,73 @@
+{
+  "_cts": {
+    "werk": {
+      "titel": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "beschreibung": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "projekt": {},
+    "projektkategorie": {},
+    "impressum": {
+      "titel": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    },
+    "cv": {
+      "titel": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "text": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "kontakt": {
+      "titel": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "text": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "slices": {
+    "ImageUploader": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "BilderHochladen": {
+      "default": {
+        "primary": {},
+        "items": {
+          "bild": {
+            "content": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+          }
+        }
+      }
+    }
+  }
+}

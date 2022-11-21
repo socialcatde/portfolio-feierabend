@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "slicemachine": "start-slicemachine"
+  },
+  "devDependencies": {
+    "@nuxtjs/prismic": "^3.0.0-rc.1",
+    "@prismicio/types": "^0.2.3",
+    "netlify-cli": "^12.2.4",
+    "nuxt": "3.0.0-rc.12",
+    "slice-machine-ui": "^0.5.2"
+  },
+  "dependencies": {
+    "swiper": "^8.4.4"
+  }
+}

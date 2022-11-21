@@ -1,0 +1,29 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "cv",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "titel": [
+      {
+        "type": "heading1",
+        "text": "Consider",
+        "spans": []
+      }
+    ],
+    "text": [
+      {
+        "type": "paragraph",
+        "text": "Est do ea ullamco cillum laborum ad dolor ipsum sunt ullamco elit ex esse.",
+        "spans": []
+      }
+    ]
+  }
+}

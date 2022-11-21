@@ -1,0 +1,29 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "impressum",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "titel": [
+      {
+        "type": "heading1",
+        "text": "Drink",
+        "spans": []
+      }
+    ],
+    "text": [
+      {
+        "type": "paragraph",
+        "text": "Minim qui mollit laboris pariatur nulla minim esse minim et. Nisi irure est occaecat aliqua aliquip cillum excepteur ad cillum. Labore tempor aliqua laborum deserunt mollit esse commodo ut adipisicing.",
+        "spans": []
+      }
+    ]
+  }
+}

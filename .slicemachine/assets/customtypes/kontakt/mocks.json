@@ -1,0 +1,29 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "kontakt",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "titel": [
+      {
+        "type": "heading1",
+        "text": "Importance",
+        "spans": []
+      }
+    ],
+    "text": [
+      {
+        "type": "paragraph",
+        "text": "Reprehenderit nulla in culpa consectetur do ad. Commodo enim esse id aute elit laboris. Laborum veniam anim laborum officia.",
+        "spans": []
+      }
+    ]
+  }
+}
