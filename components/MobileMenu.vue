@@ -63,7 +63,7 @@ watch(route, () => {
 }
 
 .topnav a.icon {
-  background: url("~/assets/img/arrow-nav.svg");
+  background: url("/img/arrow-nav.svg");
   background-repeat: no-repeat;
   background-position: center;
   display: block;

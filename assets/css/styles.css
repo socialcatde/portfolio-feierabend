@@ -101,7 +101,7 @@ li a:hover,
 }
 
 .swiper-button-prev {
-  background: url(/_nuxt/assets/img/arrow-nav.svg);
+  background: url(/img/arrow-nav.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -112,7 +112,7 @@ li a:hover,
 }
 
 .swiper-button-next {
-  background: url(/_nuxt/assets/img/arrow-nav.svg);
+  background: url(/img/arrow-nav.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
