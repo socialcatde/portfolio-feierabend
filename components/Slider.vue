@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 // import required modules
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -26,15 +27,15 @@ export default {
 
 <template>
   <swiper
+    :autoplay="{
+      delay: 5000,
+      disableOnInteraction: false,
+    }"
     :spaceBetween="30"
     navigation
     :modules="modules"
     class="mySwiper"
     :style="{ position: 'unset' }"
-    :autoplay="{
-      delay: 5000,
-      disableOnInteraction: false,
-    }"
   >
     <swiper-slide v-for="(item, i) in werkBilder" :key="`slice-item-${i}`">
       <prismic-image :field="item.bild" />

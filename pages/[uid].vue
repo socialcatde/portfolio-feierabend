@@ -10,7 +10,6 @@ if (!werk.value) {
 }
 const page = werk.value.data || false;
 const werkBilder = werk.value.data.slices[0].items;
-console.log(werk.value.data);
 
 useHead({
   title: werk.value.data.titel[0].text
