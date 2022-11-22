@@ -1,3 +1,16 @@
+<script setup>
+useHead({
+  title: "Viktoria Feierabend",
+  meta: [
+    {
+      name: "description",
+      content: "Portfolio Website von Viktoria Feierabend",
+    },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ],
+});
+</script>
+
 <template>
   <div class="container index-wrapper">
     <div class="index-container">

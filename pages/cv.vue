@@ -1,6 +1,19 @@
 <script setup>
 const { client } = usePrismic();
 const { data: cv } = await useAsyncData("cv", () => client.getSingle("cv"));
+
+useHead({
+  title: cv.value.data.titel[0].text
+    ? `Viktoria Feierabend - ${cv.value.data.titel[0].text}`
+    : "Viktoria Feierabend - 404 Seite nicht gefunden",
+  meta: [
+    {
+      name: "description",
+      content: "CV",
+    },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ],
+});
 </script>
 
 <template>

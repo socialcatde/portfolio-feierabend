@@ -3,6 +3,19 @@ const { client } = usePrismic();
 const { data: kontakt } = await useAsyncData("kontakt", () =>
   client.getSingle("kontakt")
 );
+
+useHead({
+  title: kontakt.value.data.titel[0].text
+    ? `Viktoria Feierabend - ${kontakt.value.data.titel[0].text}`
+    : "Viktoria Feierabend - 404 Seite nicht gefunden",
+  meta: [
+    {
+      name: "description",
+      content: "Kontakt",
+    },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ],
+});
 </script>
 
 <template>

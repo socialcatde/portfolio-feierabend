@@ -1,3 +1,16 @@
+<script setup>
+useHead({
+  title: "Viktoria Feierabend - Seite nicht gefunden",
+  meta: [
+    {
+      name: "description",
+      content: "404 Seite nicht gefunden",
+    },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ],
+});
+</script>
+
 <template>
   <div class="container">
     <h1>Seite nicht gefunden</h1>

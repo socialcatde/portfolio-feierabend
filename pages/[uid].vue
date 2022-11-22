@@ -10,6 +10,22 @@ if (!werk.value) {
 }
 const page = werk.value.data || false;
 const werkBilder = werk.value.data.slices[0].items;
+console.log(werk.value.data);
+
+useHead({
+  title: werk.value.data.titel[0].text
+    ? `Viktoria Feierabend - ${werk.value.data.titel[0].text}`
+    : "Viktoria Feierabend - 404 Seite nicht gefunden",
+  meta: [
+    {
+      name: "description",
+      content: werk.value.data.beschreibung[0].text
+        ? werk.value.data.beschreibung[0].text
+        : "Viktoria Feierabend - 404 Seite nicht gefunden",
+    },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ],
+});
 </script>
 
 <template>
