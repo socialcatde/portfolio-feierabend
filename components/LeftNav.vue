@@ -57,14 +57,7 @@ watch(route, () => {
   display: none;
 }
 
-.index .chrono-left-link {
-  display: none;
-}
-
 @media (max-width: 900px) {
-  .index .chrono-left-link {
-    display: block;
-  }
   .left-nav ul {
     padding-top: 20px;
   }

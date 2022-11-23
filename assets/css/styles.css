@@ -180,10 +180,12 @@ li a:hover,
 
 a.indexPoint {
   display: none;
+  visibility: hidden;
 }
 
 .index a.indexPoint {
   display: block;
+  visibility: visible;
 }
 
 .card-container p,
@@ -201,6 +203,11 @@ a.indexPoint {
 a.link-chrono {
   padding-left: 0;
   padding-bottom: 0;
+}
+
+.index .chrono-left-link {
+  display: none;
+  visibility: hidden;
 }
 
 @media (max-width: 1920px) {
@@ -237,6 +244,11 @@ a.link-chrono {
 }
 
 @media (max-width: 900px) {
+  .index .chrono-left-link {
+    display: initial;
+    visibility: visible;
+  }
+
   li.chrono-li {
     display: none;
   }
