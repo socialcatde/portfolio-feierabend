@@ -6,6 +6,46 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Chronologie documents */
+interface ChronologieDocumentData {
+    /**
+     * Titel field in *Chronologie*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: chronologie.titel
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    titel: prismicT.TitleField;
+    /**
+     * Slice Zone field in *Chronologie*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: chronologie.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ChronologieDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Chronologie → Slice Zone*
+ *
+ */
+type ChronologieDocumentDataSlicesSlice = EintragChronologieSlice;
+/**
+ * Chronologie document from Prismic
+ *
+ * - **API ID**: `chronologie`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ChronologieDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ChronologieDocumentData>, "chronologie", Lang>;
 /** Content for CV documents */
 interface CvDocumentData {
     /**
@@ -276,7 +316,7 @@ type WerkDocumentDataSlicesSlice = ImageUploaderSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type WerkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<WerkDocumentData>, "werk", Lang>;
-export type AllDocumentTypes = CvDocument | ImpressumDocument | KontaktDocument | ProjektDocument | ProjektkategorieDocument | WerkDocument;
+export type AllDocumentTypes = ChronologieDocument | CvDocument | ImpressumDocument | KontaktDocument | ProjektDocument | ProjektkategorieDocument | WerkDocument;
 /**
  * Item in BilderHochladen → Items
  *
@@ -316,11 +356,80 @@ type ImageUploaderSliceVariation = ImageUploaderSliceDefault;
  *
  */
 export type ImageUploaderSlice = prismicT.SharedSlice<"image_uploader", ImageUploaderSliceVariation>;
+/**
+ * Item in EintragChronologie → Items
+ *
+ */
+export interface EintragChronologieSliceDefaultItem {
+    /**
+     * Titel field in *EintragChronologie → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eintrag_chronologie.items[].titel
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    titel: prismicT.RichTextField;
+    /**
+     * Beschreibung field in *EintragChronologie → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eintrag_chronologie.items[].beschreibung
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    beschreibung: prismicT.RichTextField;
+    /**
+     * Entsehungszeitpunkt field in *EintragChronologie → Items*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eintrag_chronologie.items[].entsehungszeitpunkt
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    entsehungszeitpunkt: prismicT.DateField;
+    /**
+     * Projektlink field in *EintragChronologie → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eintrag_chronologie.items[].projektlink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    projektlink: prismicT.LinkField;
+}
+/**
+ * Default variation for EintragChronologie Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `EintragChronologie`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EintragChronologieSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<EintragChronologieSliceDefaultItem>>;
+/**
+ * Slice variation for *EintragChronologie*
+ *
+ */
+type EintragChronologieSliceVariation = EintragChronologieSliceDefault;
+/**
+ * EintragChronologie Shared Slice
+ *
+ * - **API ID**: `eintrag_chronologie`
+ * - **Description**: `EintragChronologie`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EintragChronologieSlice = prismicT.SharedSlice<"eintrag_chronologie", EintragChronologieSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { CvDocumentData, CvDocument, ImpressumDocumentData, ImpressumDocument, KontaktDocumentData, KontaktDocument, ProjektDocumentData, ProjektDocument, ProjektkategorieDocumentData, ProjektkategorieDocument, WerkDocumentData, WerkDocumentDataSlicesSlice, WerkDocument, AllDocumentTypes, ImageUploaderSliceDefaultItem, ImageUploaderSliceDefault, ImageUploaderSliceVariation, ImageUploaderSlice };
+        export type { ChronologieDocumentData, ChronologieDocumentDataSlicesSlice, ChronologieDocument, CvDocumentData, CvDocument, ImpressumDocumentData, ImpressumDocument, KontaktDocumentData, KontaktDocument, ProjektDocumentData, ProjektDocument, ProjektkategorieDocumentData, ProjektkategorieDocument, WerkDocumentData, WerkDocumentDataSlicesSlice, WerkDocument, AllDocumentTypes, ImageUploaderSliceDefaultItem, ImageUploaderSliceDefault, ImageUploaderSliceVariation, ImageUploaderSlice, EintragChronologieSliceDefaultItem, EintragChronologieSliceDefault, EintragChronologieSliceVariation, EintragChronologieSlice };
     }
 }

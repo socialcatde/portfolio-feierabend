@@ -51,6 +51,14 @@
           "blocks": 1
         }
       }
+    },
+    "chronologie": {
+      "titel": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
     }
   },
   "slices": {
@@ -65,6 +73,25 @@
         "items": {
           "bild": {
             "content": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+          }
+        }
+      }
+    },
+    "EintragChronologie": {
+      "default": {
+        "primary": {},
+        "items": {
+          "beschreibung": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "titel": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
           }
         }
       }

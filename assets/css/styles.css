@@ -155,6 +155,13 @@ li a:hover,
   font-size: 12px;
   margin-top: 0;
 }
+.static-pages-container {
+  max-width: 787px;
+  margin-left: 16px;
+  margin-right: auto;
+  padding-right: 20px;
+  padding-left: 0;
+}
 
 .swiper-button-next {
   right: 3px !important;
@@ -165,6 +172,35 @@ li a:hover,
 
 .werk-infos {
   padding-left: 16px;
+}
+
+.single-page .outer-container {
+  justify-content: flex-start;
+}
+
+a.indexPoint {
+  display: none;
+}
+
+.index a.indexPoint {
+  display: block;
+}
+
+.card-container p,
+.date {
+  margin: 0 0 0.67em 0;
+}
+.card-container a {
+  color: rgb(188, 55, 55);
+  text-decoration: none;
+}
+.card-container a:hover {
+  text-decoration: underline;
+}
+
+a.link-chrono {
+  padding-left: 0;
+  padding-bottom: 0;
 }
 
 @media (max-width: 1920px) {
@@ -200,7 +236,10 @@ li a:hover,
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
+  li.chrono-li {
+    display: none;
+  }
   .static-pages-container h1 {
     font-size: 16px;
     line-height: 16px;
@@ -242,6 +281,9 @@ li a:hover,
 }
 
 @media (max-width: 615px) {
+  .static-pages-container {
+    padding-left: 16px;
+  }
   .index--0 > p {
     margin-top: 0;
     line-height: 16px;

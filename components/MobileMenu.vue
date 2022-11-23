@@ -14,7 +14,7 @@ watch(route, () => {
   <div class="topnav">
     <NuxtLink to="/">Viktoria Feierabend</NuxtLink>
     <div class="myLinks" :class="{ openMenuLinks: isOpen }">
-      <NuxtLink to="/">Index</NuxtLink>
+      <NuxtLink to="/chronologie">Chronologie</NuxtLink>
       <NuxtLink to="/kontakt">Kontakt</NuxtLink>
       <NuxtLink to="/cv">CV</NuxtLink>
       <NuxtLink to="/impressum">Impressum</NuxtLink>

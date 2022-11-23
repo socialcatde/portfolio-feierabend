@@ -1,0 +1,37 @@
+{
+  "id": "chronologie",
+  "label": "Chronologie",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "titel": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Titel",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "eintrag_chronologie": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

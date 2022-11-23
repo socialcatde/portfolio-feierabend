@@ -1,0 +1,52 @@
+{
+  "id": "eintrag_chronologie",
+  "type": "SharedSlice",
+  "name": "EintragChronologie",
+  "description": "EintragChronologie",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "EintragChronologie",
+      "primary": {},
+      "items": {
+        "titel": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Titel",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
+        },
+        "beschreibung": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Beschreibung",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "entsehungszeitpunkt": {
+          "type": "Date",
+          "config": {
+            "label": "Entsehungszeitpunkt",
+            "placeholder": ""
+          }
+        },
+        "projektlink": {
+          "type": "Link",
+          "config": {
+            "label": "Projektlink",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

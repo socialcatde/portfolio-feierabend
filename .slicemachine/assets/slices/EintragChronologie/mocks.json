@@ -1,0 +1,31 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "titel": [
+          {
+            "type": "paragraph",
+            "text": "Pariatur enim nisi ad quis laboris officia. Laboris laboris cupidatat mollit veniam aliqua.",
+            "spans": []
+          }
+        ],
+        "beschreibung": [
+          {
+            "type": "paragraph",
+            "text": "Ad dolore duis dolor laboris ex nisi enim non.",
+            "spans": []
+          }
+        ],
+        "entsehungszeitpunkt": "2012-01-11",
+        "projektlink": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "primary": {},
+    "slice_type": "eintrag_chronologie"
+  }
+]

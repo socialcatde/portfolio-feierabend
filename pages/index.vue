@@ -8,6 +8,9 @@ useHead({
     },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
   ],
+  bodyAttrs: {
+    class: "index",
+  },
 });
 </script>
 
@@ -30,7 +33,7 @@ useHead({
   max-height: 87vh;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
   .container.index-wrapper {
     max-height: 100%;
   }

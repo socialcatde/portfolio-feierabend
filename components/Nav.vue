@@ -27,11 +27,16 @@ const { data: werke } = await useAsyncData("werke", () =>
 );
 const { toggleKreiselStyle, isClicked, isActive, currentProject } =
   useClickKreisel();
+
+const { isOpen } = indexMenu();
 </script>
 
 <template>
   <div class="right-nav">
-    <ul>
+    <ul :class="{ openIndexLinks: isOpen }">
+      <li class="chrono-li">
+        <NuxtLink class="link-chrono" to="/chronologie">Chronologie</NuxtLink>
+      </li>
       <li
         v-for="(projektkategorie, index) in projektkategorien"
         :key="projektkategorie.data.projektkategorie_name"
@@ -40,21 +45,21 @@ const { toggleKreiselStyle, isClicked, isActive, currentProject } =
           :field="projektkategorie.data.projektkategorie_name"
           :class="[`index--${index}`]"
         />
-        <ul class="sub-list">
+        <ul class="sub-list" :class="{ openIndexLinks: isOpen }">
           <template v-for="projekt in projekte" :key="projekt.data.projektname">
             <li
               v-if="projektkategorie.uid == projekt.data.kategorie_projekt.uid"
             >
-              <a
-                href="#"
+              <NuxtLink
                 @click="toggleKreiselStyle($event, projekt.uid)"
                 :class="[
                   isActive(currentProject, projekt.uid) ? 'click-color' : '',
                 ]"
                 class="projektnamen"
-              >
-                <prismic-rich-text :field="projekt.data.projektname" />
-              </a>
+                to="/"
+                ><prismic-rich-text :field="projekt.data.projektname"
+              /></NuxtLink>
+
               <ul id="sub-list-mobil">
                 <template v-for="werk in werke" :key="werk.data.titel">
                   <li v-if="werk.data.zugehoriges_projekt.uid == projekt.uid">
@@ -81,6 +86,17 @@ li {
 
 .right-nav {
   width: 315px;
+}
+
+.right-nav ul {
+  transition: max-height 0.4s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.openIndexLinks {
+  max-height: 100vh !important;
+  transition: max-height 0.4s ease-out !important;
 }
 
 .right-nav ul:first-child {
@@ -130,7 +146,11 @@ ul.sub-list {
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
+  .right-nav ul {
+    max-height: unset;
+    overflow: visible;
+  }
   .right-nav {
     max-width: 461px;
     width: 80%;

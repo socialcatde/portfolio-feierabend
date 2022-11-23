@@ -1,10 +1,26 @@
+<script setup>
+const { openTheMenu, isOpen } = indexMenu();
+
+const route = useRoute();
+watch(route, () => {
+  isOpen.value = false;
+});
+</script>
+
 <template>
   <div class="left-nav">
     <ul>
       <li>
         <NuxtLink class="first-name" to="/">Viktoria Feierabend </NuxtLink>
       </li>
-      <li><NuxtLink to="/"> Index </NuxtLink></li>
+      <li>
+        <NuxtLink to="/" class="indexPoint" @click="openTheMenu">
+          Index
+        </NuxtLink>
+      </li>
+      <li class="chrono-left-link">
+        <NuxtLink to="/chronologie"> Chronologie </NuxtLink>
+      </li>
       <li><NuxtLink to="/kontakt"> Kontakt </NuxtLink></li>
       <li><NuxtLink to="cv"> CV </NuxtLink></li>
       <li><NuxtLink class="impressum" to="#"> Impressum </NuxtLink></li>
@@ -41,7 +57,14 @@
   display: none;
 }
 
-@media (max-width: 1150px) {
+.index .chrono-left-link {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .index .chrono-left-link {
+    display: block;
+  }
   .left-nav ul {
     padding-top: 20px;
   }
@@ -52,6 +75,10 @@
 
   .first-name {
     font-size: 16px;
+  }
+
+  .index a.indexPoint {
+    display: none;
   }
 }
 
