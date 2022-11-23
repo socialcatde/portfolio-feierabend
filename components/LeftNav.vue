@@ -14,12 +14,19 @@ watch(route, () => {
         <NuxtLink class="first-name" to="/">Viktoria Feierabend </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/" class="indexPoint" @click="openTheMenu">
+        <NuxtLink
+          style="display: block"
+          to="/"
+          class="indexPoint"
+          @click="openTheMenu"
+        >
           Index
         </NuxtLink>
       </li>
       <li class="chrono-left-link">
-        <NuxtLink to="/chronologie"> Chronologie </NuxtLink>
+        <NuxtLink style="display: none" to="/chronologie">
+          Chronologie
+        </NuxtLink>
       </li>
       <li><NuxtLink to="/kontakt"> Kontakt </NuxtLink></li>
       <li><NuxtLink to="cv"> CV </NuxtLink></li>
@@ -57,6 +64,14 @@ watch(route, () => {
   display: none;
 }
 
+.single-page a.indexPoint {
+  display: none !important;
+}
+
+.single-page .chrono-left-link a {
+  display: block !important;
+}
+
 @media (max-width: 900px) {
   .left-nav ul {
     padding-top: 20px;
@@ -70,8 +85,8 @@ watch(route, () => {
     font-size: 16px;
   }
 
-  .index a.indexPoint {
-    display: none;
+  a.indexPoint {
+    display: none !important;
   }
 }
 
