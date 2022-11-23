@@ -1,6 +1,8 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
+// import required modules
+import { Autoplay, Navigation, Pagination } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -8,18 +10,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-// import required modules
-import { Navigation, Pagination, Autoplay } from "swiper";
-
 export default {
   props: ["werkBilder"],
   components: {
     Swiper,
     SwiperSlide,
   },
+
   setup() {
     return {
-      modules: [Pagination, Navigation, Autoplay],
+      modules: [Autoplay, Pagination, Navigation],
     };
   },
 };

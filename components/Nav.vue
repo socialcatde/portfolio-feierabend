@@ -1,11 +1,26 @@
 <script setup>
 const { client } = usePrismic();
 const { data: projekte } = await useAsyncData("projekt", () =>
-  client.getAllByType("projekt")
+  client.getAllByType("projekt", {
+    orderings: [
+      {
+        field: "my.projekt.projektname",
+        direction: "asc",
+      },
+    ],
+  })
 );
 const { data: projektkategorien } = await useAsyncData(
   "projektkategorien",
-  () => client.getAllByType("projektkategorie")
+  () =>
+    client.getAllByType("projektkategorie", {
+      orderings: [
+        {
+          field: "my.projektkategorie.projektkategorie_name",
+          direction: "asc",
+        },
+      ],
+    })
 );
 const { data: werke } = await useAsyncData("werke", () =>
   client.getAllByType("werk")
