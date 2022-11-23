@@ -87,4 +87,10 @@ watch(route, () => {
 .myLinks {
   padding-top: 8px;
 }
+
+@media (max-width: 615px) {
+  .topnav a.icon:hover {
+    filter: unset;
+  }
+}
 </style>
