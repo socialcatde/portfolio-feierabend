@@ -75,8 +75,8 @@ watch(route, () => {
   width: auto;
 }
 .topnav a.icon:hover {
-  filter: invert(13%) sepia(16%) saturate(6030%) hue-rotate(333deg)
-    brightness(97%) contrast(87%);
+  filter: invert(26%) sepia(59%) saturate(1588%) hue-rotate(332deg)
+    brightness(105%) contrast(90%);
 }
 
 .active {

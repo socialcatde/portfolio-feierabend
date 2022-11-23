@@ -101,7 +101,7 @@ ul.sub-list {
 }
 
 .click-color {
-  color: rgb(94, 36, 36);
+  color: rgb(188, 55, 55);
 }
 
 #sub-list-mobil img {
@@ -115,8 +115,8 @@ ul.sub-list {
   display: flex;
 }
 #sub-list-mobil a:hover {
-  filter: invert(13%) sepia(16%) saturate(6030%) hue-rotate(333deg)
-    brightness(97%) contrast(87%);
+  filter: invert(26%) sepia(59%) saturate(1588%) hue-rotate(332deg)
+    brightness(105%) contrast(90%);
 }
 
 @media (max-width: 615px) {
