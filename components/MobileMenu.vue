@@ -74,10 +74,6 @@ watch(route, () => {
   transition: transform 0.2s;
   width: auto;
 }
-.topnav a.icon:hover {
-  filter: invert(26%) sepia(59%) saturate(1588%) hue-rotate(332deg)
-    brightness(105%) contrast(90%);
-}
 
 .active {
   background-color: white;
@@ -86,11 +82,5 @@ watch(route, () => {
 
 .myLinks {
   padding-top: 8px;
-}
-
-@media (max-width: 615px) {
-  .topnav a.icon:hover {
-    filter: unset;
-  }
 }
 </style>
