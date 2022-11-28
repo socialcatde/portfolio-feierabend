@@ -28,7 +28,7 @@ watch(route, () => {
           Chronologie
         </NuxtLink>
       </li>
-      <li><NuxtLink to="/kontakt"> Kontakt1 </NuxtLink></li>
+      <li><NuxtLink to="/kontakt"> Kontakt </NuxtLink></li>
       <li><NuxtLink to="cv"> CV </NuxtLink></li>
       <li><NuxtLink class="impressum" to="#"> Impressum </NuxtLink></li>
     </ul>
