@@ -3,7 +3,7 @@ const isOpen = ref(false);
 const openTheMenu = () => {
   isOpen.value = !isOpen.value;
 };
-
+const { chronologie } = await fetchData();
 const route = useRoute();
 watch(route, () => {
   isOpen.value = false;
@@ -14,7 +14,9 @@ watch(route, () => {
   <div class="topnav">
     <NuxtLink to="/">Viktoria Feierabend</NuxtLink>
     <div class="myLinks" :class="{ openMenuLinks: isOpen }">
-      <NuxtLink to="/chronologie">Chronologie</NuxtLink>
+      <span v-if="chronologie"
+        ><NuxtLink to="/chronologie">Chronologie</NuxtLink></span
+      >
       <NuxtLink to="/kontakt">Kontakt</NuxtLink>
       <NuxtLink to="/cv">CV</NuxtLink>
       <NuxtLink to="/impressum">Impressum</NuxtLink>

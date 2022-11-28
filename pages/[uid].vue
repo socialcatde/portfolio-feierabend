@@ -5,6 +5,12 @@ const { client } = usePrismic();
 const { data: werk } = await useAsyncData(name, () =>
   client.getByUID("werk", name)
 );
+const { data: projekt } = await useAsyncData("projekt1", () =>
+  client.getByUID("projekt", werk.value.data.zugehoriges_projekt.uid)
+);
+const { data: projektkategorie } = await useAsyncData("projektkategorie1", () =>
+  client.getByUID("projektkategorie", projekt.value.data.kategorie_projekt.uid)
+);
 if (!werk.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
@@ -35,7 +41,11 @@ useHead({
     <div v-if="page" class="container-werk">
       <slider :werkBilder="werkBilder" />
     </div>
-    <NavWerk />
+    <NavWerk
+      :werk="werk"
+      :projekt="projekt"
+      :projektkategorie="projektkategorie"
+    />
   </div>
 </template>
 

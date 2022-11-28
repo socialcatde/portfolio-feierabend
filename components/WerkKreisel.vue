@@ -1,8 +1,5 @@
 <script setup>
-const { client } = usePrismic();
-const { data: werke } = await useAsyncData("werk", () =>
-  client.getAllByType("werk")
-);
+const { werke } = await fetchData();
 const { currentProject, isActive } = useClickKreisel();
 const hover = ref(false);
 </script>

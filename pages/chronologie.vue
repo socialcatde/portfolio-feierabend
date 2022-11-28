@@ -1,8 +1,5 @@
 <script setup>
-const { client } = usePrismic();
-const { data: chronologie } = await useAsyncData("chronologie", () =>
-  client.getSingle("chronologie")
-);
+const { chronologie } = await fetchData();
 
 useHead({
   title: chronologie.value.data.titel[0].text

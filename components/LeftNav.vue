@@ -1,6 +1,6 @@
 <script setup>
 const { openTheMenu, isOpen } = indexMenu();
-
+const { chronologie } = await fetchData();
 const route = useRoute();
 watch(route, () => {
   isOpen.value = false;
@@ -23,7 +23,7 @@ watch(route, () => {
           Index
         </NuxtLink>
       </li>
-      <li class="chrono-left-link">
+      <li v-if="chronologie" class="chrono-left-link">
         <NuxtLink style="display: none" to="/chronologie">
           Chronologie
         </NuxtLink>

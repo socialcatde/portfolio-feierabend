@@ -1,21 +1,9 @@
 <script setup>
-const route = useRoute();
-const name = route.params.uid;
-const { client } = usePrismic();
-const { data: werk } = await useAsyncData(name, () =>
-  client.getByUID("werk", name)
-);
-const { data: projekt } = await useAsyncData("projektWerkNav", () =>
-  client.getByUID("projekt", werk.value.data.zugehoriges_projekt.uid)
-);
-const { data: projektkategorie } = await useAsyncData(
-  "projektkategorieWerkNav",
-  () =>
-    client.getByUID(
-      "projektkategorie",
-      projekt.value.data.kategorie_projekt.uid
-    )
-);
+const props = defineProps({
+  werk: Object,
+  projektkategorie: Object,
+  projekt: Object,
+});
 </script>
 
 <template>

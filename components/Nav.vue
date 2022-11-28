@@ -1,40 +1,15 @@
 <script setup>
-const { client } = usePrismic();
-const { data: projekte } = await useAsyncData("projekt", () =>
-  client.getAllByType("projekt", {
-    orderings: [
-      {
-        field: "my.projekt.projektname",
-        direction: "asc",
-      },
-    ],
-  })
-);
-const { data: projektkategorien } = await useAsyncData(
-  "projektkategorien",
-  () =>
-    client.getAllByType("projektkategorie", {
-      orderings: [
-        {
-          field: "my.projektkategorie.projektkategorie_name",
-          direction: "asc",
-        },
-      ],
-    })
-);
-const { data: werke } = await useAsyncData("werke", () =>
-  client.getAllByType("werk")
-);
+const { isOpen } = indexMenu();
+const { werke, projekte, projektkategorien } = await fetchData();
+const { chronologie } = await fetchData();
 const { toggleKreiselStyle, isClicked, isActive, currentProject } =
   useClickKreisel();
-
-const { isOpen } = indexMenu();
 </script>
 
 <template>
   <div class="right-nav">
     <ul :class="{ openIndexLinks: isOpen }">
-      <li class="chrono-li">
+      <li v-if="chronologie" class="chrono-li">
         <NuxtLink class="link-chrono" to="/chronologie">Chronologie</NuxtLink>
       </li>
       <li
