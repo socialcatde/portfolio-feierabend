@@ -14,7 +14,6 @@ const { data: projektkategorie } = await useAsyncData("projektkategorie1", () =>
 if (!werk.value) {
   throw createError({ statusCode: 404, statusMessage: "Page Not Found" });
 }
-const page = werk.value.data || false;
 
 useHead({
   title: werk.value.data.titel[0].text
@@ -37,11 +36,8 @@ useHead({
 
 <template>
   <div class="container outer-werk">
-    <div v-if="page" class="container-werk">
-      <slider
-        v-if="werk.data.slices[0]"
-        :werkBilder="werk.data.slices[0].items"
-      />
+    <div v-if="werk.data.slices[0]" class="container-werk">
+      <slider :werkBilder="werk.data.slices[0].items" />
     </div>
     <NavWerk
       :werk="werk"
