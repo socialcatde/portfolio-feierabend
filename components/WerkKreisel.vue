@@ -9,6 +9,7 @@ const { currentProject, isActive, isWerkActive } = useClickKreisel();
       :style="{
         top: werk.data.kreisel_y_position + '%',
         left: werk.data.kreisel_x_position + '%',
+        width: werk.data.grosse_kreisel + 'px',
       }"
       class="kreisel-bild"
     >
@@ -61,5 +62,8 @@ const { currentProject, isActive, isWerkActive } = useClickKreisel();
 .kreisel-bild a:hover + .werk-name {
   visibility: visible;
   opacity: 1;
+  position: absolute;
+  left: 0;
+  max-width: 200px;
 }
 </style>
