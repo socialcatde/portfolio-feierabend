@@ -425,11 +425,50 @@ type EintragChronologieSliceVariation = EintragChronologieSliceDefault;
  *
  */
 export type EintragChronologieSlice = prismicT.SharedSlice<"eintrag_chronologie", EintragChronologieSliceVariation>;
+/**
+ * Item in Projektkategorien → Items
+ *
+ */
+export interface WerkkategorieSliceDefaultItem {
+    /**
+     * Zugehörige Projektkategorie field in *Projektkategorien → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: werkkategorie.items[].zugehorigeprojektkategorie
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    zugehorigeprojektkategorie: prismicT.RelationField<"projektkategorie">;
+}
+/**
+ * Default variation for Projektkategorien Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Werkkategorie`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WerkkategorieSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<WerkkategorieSliceDefaultItem>>;
+/**
+ * Slice variation for *Projektkategorien*
+ *
+ */
+type WerkkategorieSliceVariation = WerkkategorieSliceDefault;
+/**
+ * Projektkategorien Shared Slice
+ *
+ * - **API ID**: `werkkategorie`
+ * - **Description**: `Werkkategorie`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WerkkategorieSlice = prismicT.SharedSlice<"werkkategorie", WerkkategorieSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ChronologieDocumentData, ChronologieDocumentDataSlicesSlice, ChronologieDocument, CvDocumentData, CvDocument, ImpressumDocumentData, ImpressumDocument, KontaktDocumentData, KontaktDocument, ProjektDocumentData, ProjektDocument, ProjektkategorieDocumentData, ProjektkategorieDocument, WerkDocumentData, WerkDocumentDataSlicesSlice, WerkDocument, AllDocumentTypes, ImageUploaderSliceDefaultItem, ImageUploaderSliceDefault, ImageUploaderSliceVariation, ImageUploaderSlice, EintragChronologieSliceDefaultItem, EintragChronologieSliceDefault, EintragChronologieSliceVariation, EintragChronologieSlice };
+        export type { ChronologieDocumentData, ChronologieDocumentDataSlicesSlice, ChronologieDocument, CvDocumentData, CvDocument, ImpressumDocumentData, ImpressumDocument, KontaktDocumentData, KontaktDocument, ProjektDocumentData, ProjektDocument, ProjektkategorieDocumentData, ProjektkategorieDocument, WerkDocumentData, WerkDocumentDataSlicesSlice, WerkDocument, AllDocumentTypes, ImageUploaderSliceDefaultItem, ImageUploaderSliceDefault, ImageUploaderSliceVariation, ImageUploaderSlice, EintragChronologieSliceDefaultItem, EintragChronologieSliceDefault, EintragChronologieSliceVariation, EintragChronologieSlice, WerkkategorieSliceDefaultItem, WerkkategorieSliceDefault, WerkkategorieSliceVariation, WerkkategorieSlice };
     }
 }

@@ -153,6 +153,68 @@
           "extension": "vue"
         },
         "screenshotPaths": {}
+      },
+      "werkkategorie": {
+        "library": "slices",
+        "id": "werkkategorie",
+        "name": "Projektkategorien",
+        "description": "Werkkategorie",
+        "model": {
+          "id": "werkkategorie",
+          "type": "SharedSlice",
+          "name": "Projektkategorien",
+          "description": "Werkkategorie",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Werkkategorie",
+              "primary": {},
+              "items": {
+                "zugehorigeprojektkategorie": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Zugehörige Projektkategorie",
+                    "select": "document",
+                    "customtypes": [
+                      "projektkategorie"
+                    ]
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "zugehorigeprojektkategorie": {
+                  "id": "mock_document_id",
+                  "link_type": "Document",
+                  "type": "projektkategorie",
+                  "tags": [],
+                  "lang": "en-us",
+                  "slug": null,
+                  "first_publication_date": "1970-01-01T00:00:01+0000",
+                  "last_publication_date": "1970-01-01T01:00:00+0000"
+                }
+              }
+            ],
+            "primary": {},
+            "slice_type": "werkkategorie"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
       }
     }
   }

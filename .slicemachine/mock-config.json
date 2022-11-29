@@ -95,6 +95,18 @@
           }
         }
       }
+    },
+    "Werkkategorie": {},
+    "Werkkategorien": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Projektkategorien": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

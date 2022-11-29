@@ -2,13 +2,16 @@
 
 import BilderHochladen from './BilderHochladen';
 import EintragChronologie from './EintragChronologie';
+import Projektkategorien from './Projektkategorien';
 
 export {
 	BilderHochladen,
 	EintragChronologie,
+	Projektkategorien,
 };
 
 export const components = {
 	image_uploader: BilderHochladen,
 	eintrag_chronologie: EintragChronologie,
+	werkkategorie: Projektkategorien,
 };

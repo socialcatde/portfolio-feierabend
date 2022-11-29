@@ -1,0 +1,29 @@
+{
+  "id": "werkkategorie",
+  "type": "SharedSlice",
+  "name": "Projektkategorien",
+  "description": "Werkkategorie",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Werkkategorie",
+      "primary": {},
+      "items": {
+        "zugehorigeprojektkategorie": {
+          "type": "Link",
+          "config": {
+            "label": "Zugehörige Projektkategorie",
+            "select": "document",
+            "customtypes": [
+              "projektkategorie"
+            ]
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

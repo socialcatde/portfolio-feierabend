@@ -16,10 +16,19 @@ const { toggleKreiselStyle, isClicked, isActive, currentProject } =
         v-for="(projektkategorie, index) in projektkategorien"
         :key="projektkategorie.data.projektkategorie_name"
       >
-        <prismic-rich-text
-          :field="projektkategorie.data.projektkategorie_name"
-          :class="[`index--${index}`]"
-        />
+        <NuxtLink
+          @click="toggleKreiselStyle($event, projektkategorie.uid)"
+          :class="[
+            isActive(currentProject, projektkategorie.uid) ? 'click-color' : '',
+          ]"
+          class="projektnamen"
+          to="/"
+        >
+          <prismic-rich-text
+            :field="projektkategorie.data.projektkategorie_name"
+            :class="[`index--${index}`]"
+          />
+        </NuxtLink>
         <ul class="sub-list" :class="{ openIndexLinks: isOpen }">
           <template v-for="projekt in projekte" :key="projekt.data.projektname">
             <li

@@ -5,6 +5,7 @@ export const fetchData = async () => {
     { data: chronologie },
     { data: projekte },
     { data: projektkategorien },
+    { data: werktags },
   ] = await Promise.all([
     useAsyncData("werk", () => client.getAllByType("werk")),
     useAsyncData("chronologie", () => client.getSingle("chronologie")),
@@ -28,9 +29,10 @@ export const fetchData = async () => {
         ],
       })
     ),
+    useAsyncData("werktags", () => client.getAllByTag("film")),
   ]);
 
-  return { werke, chronologie, projekte, projektkategorien };
+  return { werke, chronologie, projekte, projektkategorien, werktags };
 };
 
 export default fetchData;

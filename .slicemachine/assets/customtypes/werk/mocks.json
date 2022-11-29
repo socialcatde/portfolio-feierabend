@@ -14,14 +14,14 @@
     "titel": [
       {
         "type": "heading1",
-        "text": "Modern",
+        "text": "Unusual",
         "spans": []
       }
     ],
     "beschreibung": [
       {
         "type": "paragraph",
-        "text": "Pariatur nulla do occaecat consectetur officia sunt elit elit pariatur. Ipsum mollit ex et dolore aliquip aute ea ullamco consequat veniam veniam tempor voluptate. In elit dolore sit quis id nisi in Lorem Lorem labore aliqua adipisicing.",
+        "text": "Eu incididunt quis culpa sunt fugiat fugiat fugiat cupidatat do dolor labore voluptate tempor sint laboris. Laboris aliquip sint Lorem sit et laboris magna commodo voluptate aliqua enim.",
         "spans": []
       }
     ],
@@ -42,11 +42,11 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468"
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
     },
-    "kreisel_x_position": 40,
-    "kreisel_y_position": 53,
-    "grosse_kreisel": 1,
+    "kreisel_x_position": 45,
+    "kreisel_y_position": 11,
+    "grosse_kreisel": 18,
     "slices": []
   }
 }

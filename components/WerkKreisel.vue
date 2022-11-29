@@ -1,7 +1,6 @@
 <script setup>
-const { werke } = await fetchData();
-const { currentProject, isActive } = useClickKreisel();
-const hover = ref(false);
+const { werke, werktags } = await fetchData();
+const { currentProject, isActive, isWerkActive } = useClickKreisel();
 </script>
 
 <template>
@@ -21,6 +20,7 @@ const hover = ref(false);
               ? 'click-filter'
               : '',
             werk.data.zugehoriges_projekt.uid,
+            isWerkActive(currentProject, werk.tags) ? 'click-filter' : '',
           ]"
           :style="{ width: werk.data.grosse_kreisel + 'px' }"
         />
@@ -32,6 +32,7 @@ const hover = ref(false);
           isActive(currentProject, werk.data.zugehoriges_projekt.uid)
             ? 'click-color'
             : '',
+          isWerkActive(currentProject, werk.tags) ? 'click-color' : '',
           werk.data.zugehoriges_projekt.uid,
         ]"
       />
@@ -57,7 +58,7 @@ const hover = ref(false);
   transition: visibility 0.5s, opacity 0.5s linear;
 }
 
-.kreisel-bild:hover .werk-name {
+.kreisel-bild a:hover + .werk-name {
   visibility: visible;
   opacity: 1;
 }
