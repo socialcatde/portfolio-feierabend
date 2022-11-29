@@ -79,7 +79,7 @@ li {
 }
 
 .openIndexLinks {
-  max-height: 100vh !important;
+  max-height: 365vh !important;
   transition: max-height 0.4s ease-out !important;
 }
 

@@ -27,9 +27,6 @@ useHead({
 .index-container {
   flex: 1;
   position: relative;
-}
-
-.container.index-wrapper {
   max-height: 87vh;
 }
 
