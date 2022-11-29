@@ -9,12 +9,12 @@ const props = defineProps({
 <template>
   <div class="right-nav">
     <ul>
-      <li>
+      <li v-if="projektkategorie">
         <prismic-rich-text
           :field="projektkategorie.data.projektkategorie_name"
         />
         <ul class="sub-list">
-          <li>
+          <li v-if="projekt">
             <prismic-rich-text :field="projekt.data.projektname" />
           </li>
         </ul>
@@ -22,8 +22,11 @@ const props = defineProps({
     </ul>
 
     <div class="werk-infos">
-      <prismic-rich-text :field="werk.data.titel" />
-      <prismic-rich-text :field="werk.data.beschreibung" />
+      <prismic-rich-text v-if="werk.data.titel" :field="werk.data.titel" />
+      <prismic-rich-text
+        v-if="werk.data.beschreibung"
+        :field="werk.data.beschreibung"
+      />
     </div>
   </div>
 </template>
