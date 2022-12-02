@@ -305,7 +305,7 @@ interface WerkDocumentData {
  * Slice for *Werk → Slice Zone*
  *
  */
-type WerkDocumentDataSlicesSlice = ImageUploaderSlice;
+type WerkDocumentDataSlicesSlice = ImageUploaderSlice | VideoHochladenSlice;
 /**
  * Werk document from Prismic
  *
@@ -464,11 +464,50 @@ type WerkkategorieSliceVariation = WerkkategorieSliceDefault;
  *
  */
 export type WerkkategorieSlice = prismicT.SharedSlice<"werkkategorie", WerkkategorieSliceVariation>;
+/**
+ * Item in VideoHochladen → Items
+ *
+ */
+export interface VideoHochladenSliceDefaultItem {
+    /**
+     * Werkvideo field in *VideoHochladen → Items*
+     *
+     * - **Field Type**: Link to Media
+     * - **Placeholder**: *None*
+     * - **API ID Path**: video_hochladen.items[].werkvideo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    werkvideo: prismicT.LinkToMediaField;
+}
+/**
+ * Default variation for VideoHochladen Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `VideoHochladen`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoHochladenSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<VideoHochladenSliceDefaultItem>>;
+/**
+ * Slice variation for *VideoHochladen*
+ *
+ */
+type VideoHochladenSliceVariation = VideoHochladenSliceDefault;
+/**
+ * VideoHochladen Shared Slice
+ *
+ * - **API ID**: `video_hochladen`
+ * - **Description**: `VideoHochladen`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoHochladenSlice = prismicT.SharedSlice<"video_hochladen", VideoHochladenSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ChronologieDocumentData, ChronologieDocumentDataSlicesSlice, ChronologieDocument, CvDocumentData, CvDocument, ImpressumDocumentData, ImpressumDocument, KontaktDocumentData, KontaktDocument, ProjektDocumentData, ProjektDocument, ProjektkategorieDocumentData, ProjektkategorieDocument, WerkDocumentData, WerkDocumentDataSlicesSlice, WerkDocument, AllDocumentTypes, ImageUploaderSliceDefaultItem, ImageUploaderSliceDefault, ImageUploaderSliceVariation, ImageUploaderSlice, EintragChronologieSliceDefaultItem, EintragChronologieSliceDefault, EintragChronologieSliceVariation, EintragChronologieSlice, WerkkategorieSliceDefaultItem, WerkkategorieSliceDefault, WerkkategorieSliceVariation, WerkkategorieSlice };
+        export type { ChronologieDocumentData, ChronologieDocumentDataSlicesSlice, ChronologieDocument, CvDocumentData, CvDocument, ImpressumDocumentData, ImpressumDocument, KontaktDocumentData, KontaktDocument, ProjektDocumentData, ProjektDocument, ProjektkategorieDocumentData, ProjektkategorieDocument, WerkDocumentData, WerkDocumentDataSlicesSlice, WerkDocument, AllDocumentTypes, ImageUploaderSliceDefaultItem, ImageUploaderSliceDefault, ImageUploaderSliceVariation, ImageUploaderSlice, EintragChronologieSliceDefaultItem, EintragChronologieSliceDefault, EintragChronologieSliceVariation, EintragChronologieSlice, WerkkategorieSliceDefaultItem, WerkkategorieSliceDefault, WerkkategorieSliceVariation, WerkkategorieSlice, VideoHochladenSliceDefaultItem, VideoHochladenSliceDefault, VideoHochladenSliceVariation, VideoHochladenSlice };
     }
 }

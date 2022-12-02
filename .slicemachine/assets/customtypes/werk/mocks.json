@@ -14,14 +14,14 @@
     "titel": [
       {
         "type": "heading1",
-        "text": "Unusual",
+        "text": "Taught",
         "spans": []
       }
     ],
     "beschreibung": [
       {
         "type": "paragraph",
-        "text": "Eu incididunt quis culpa sunt fugiat fugiat fugiat cupidatat do dolor labore voluptate tempor sint laboris. Laboris aliquip sint Lorem sit et laboris magna commodo voluptate aliqua enim.",
+        "text": "Tempor proident ullamco anim ipsum et in fugiat Lorem veniam excepteur. Amet magna nulla sunt eu aute laborum cupidatat ex irure minim non.",
         "spans": []
       }
     ],
@@ -42,11 +42,11 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
+      "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
     },
-    "kreisel_x_position": 45,
-    "kreisel_y_position": 11,
-    "grosse_kreisel": 18,
+    "kreisel_x_position": 69,
+    "kreisel_y_position": 24,
+    "grosse_kreisel": 21,
     "slices": []
   }
 }

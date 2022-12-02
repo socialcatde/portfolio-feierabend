@@ -76,6 +76,9 @@
           "choices": {
             "image_uploader": {
               "type": "SharedSlice"
+            },
+            "video_hochladen": {
+              "type": "SharedSlice"
             }
           }
         }

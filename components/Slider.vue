@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 export default {
-  props: ["werkBilder"],
+  props: ["werkBilder", "werkVideos"],
   components: {
     Swiper,
     SwiperSlide,
@@ -27,16 +27,22 @@ export default {
 
 <template>
   <swiper
-    :autoplay="{
-      delay: 5000,
-      disableOnInteraction: false,
-    }"
     :spaceBetween="30"
     navigation
+    :autoplay="{
+      delay: 5000,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true,
+    }"
     :modules="modules"
     class="mySwiper"
     :style="{ position: 'unset' }"
   >
+    <swiper-slide v-for="(video, i) in werkVideos" :key="`slice-video-${i}`">
+      <video controls width="100%">
+        <source :src="video.werkvideo.url" type="video/mp4" />
+      </video>
+    </swiper-slide>
     <swiper-slide v-for="(item, i) in werkBilder" :key="`slice-item-${i}`">
       <prismic-image :field="item.bild" />
     </swiper-slide>
@@ -68,6 +74,10 @@ export default {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+}
+
+.swiper-slide video {
+  width: 100%;
 }
 
 .swiper-slide img {
