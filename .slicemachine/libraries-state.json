@@ -219,12 +219,12 @@
       "video_hochladen": {
         "library": "slices",
         "id": "video_hochladen",
-        "name": "VideoHochladen",
+        "name": "VideosHochladen",
         "description": "VideoHochladen",
         "model": {
           "id": "video_hochladen",
           "type": "SharedSlice",
-          "name": "VideoHochladen",
+          "name": "VideosHochladen",
           "description": "VideoHochladen",
           "variations": [
             {

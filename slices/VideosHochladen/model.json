@@ -1,7 +1,7 @@
 {
   "id": "video_hochladen",
   "type": "SharedSlice",
-  "name": "VideoHochladen",
+  "name": "VideosHochladen",
   "description": "VideoHochladen",
   "variations": [
     {

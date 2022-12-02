@@ -465,12 +465,12 @@ type WerkkategorieSliceVariation = WerkkategorieSliceDefault;
  */
 export type WerkkategorieSlice = prismicT.SharedSlice<"werkkategorie", WerkkategorieSliceVariation>;
 /**
- * Item in VideoHochladen → Items
+ * Item in VideosHochladen → Items
  *
  */
 export interface VideoHochladenSliceDefaultItem {
     /**
-     * Werkvideo field in *VideoHochladen → Items*
+     * Werkvideo field in *VideosHochladen → Items*
      *
      * - **Field Type**: Link to Media
      * - **Placeholder**: *None*
@@ -481,7 +481,7 @@ export interface VideoHochladenSliceDefaultItem {
     werkvideo: prismicT.LinkToMediaField;
 }
 /**
- * Default variation for VideoHochladen Slice
+ * Default variation for VideosHochladen Slice
  *
  * - **API ID**: `default`
  * - **Description**: `VideoHochladen`
@@ -490,12 +490,12 @@ export interface VideoHochladenSliceDefaultItem {
  */
 export type VideoHochladenSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<VideoHochladenSliceDefaultItem>>;
 /**
- * Slice variation for *VideoHochladen*
+ * Slice variation for *VideosHochladen*
  *
  */
 type VideoHochladenSliceVariation = VideoHochladenSliceDefault;
 /**
- * VideoHochladen Shared Slice
+ * VideosHochladen Shared Slice
  *
  * - **API ID**: `video_hochladen`
  * - **Description**: `VideoHochladen`

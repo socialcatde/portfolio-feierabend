@@ -3,18 +3,18 @@
 import BilderHochladen from './BilderHochladen';
 import EintragChronologie from './EintragChronologie';
 import Projektkategorien from './Projektkategorien';
-import VideoHochladen from './VideoHochladen';
+import VideosHochladen from './VideosHochladen';
 
 export {
 	BilderHochladen,
 	EintragChronologie,
 	Projektkategorien,
-	VideoHochladen,
+	VideosHochladen,
 };
 
 export const components = {
 	image_uploader: BilderHochladen,
 	eintrag_chronologie: EintragChronologie,
 	werkkategorie: Projektkategorien,
-	video_hochladen: VideoHochladen,
+	video_hochladen: VideosHochladen,
 };
