@@ -77,7 +77,10 @@ export default {
 }
 
 .swiper-slide video {
-  width: 100%;
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .swiper-slide img {
