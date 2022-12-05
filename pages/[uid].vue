@@ -32,22 +32,27 @@ useHead({
     class: "single-page",
   },
 });
+
+const videoArr = ref([]);
+const bilderArr = ref([]);
+const medien = werk.value.data.slices;
+onMounted(() => {
+  medien.forEach(function (arrayItem) {
+    if (arrayItem.slice_type == "video_hochladen") {
+      videoArr.value = arrayItem.items;
+    } else if (arrayItem.slice_type == "image_uploader") {
+      bilderArr.value = arrayItem.items;
+    }
+  });
+});
 </script>
 
 <template>
   <div class="container outer-werk">
-    <div v-if="werk.data.slices[0].items[0].bild" class="container-werk">
-      <slider
-        :werkBilder="werk.data.slices[0].items"
-        :werkVideos="werk.data.slices[1].items"
-      />
+    <div class="container-werk">
+      <slider :werkBilder="bilderArr" :werkVideos="videoArr" />
     </div>
-    <div v-else-if="werk.data.slices[1].items[0].bild" class="container-werk">
-      <slider
-        :werkVideos="werk.data.slices[0].items"
-        :werkBilder="werk.data.slices[1].items"
-      />
-    </div>
+
     <NavWerk
       :werk="werk"
       :projekt="projekt"
