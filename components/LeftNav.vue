@@ -1,6 +1,6 @@
 <script setup>
 const { openTheMenu, isOpen } = indexMenu();
-const { chronologie } = await fetchData();
+const { chronologie, cv } = await fetchData();
 const route = useRoute();
 watch(route, () => {
   isOpen.value = false;
@@ -29,7 +29,7 @@ watch(route, () => {
         </NuxtLink>
       </li>
       <li><NuxtLink to="/kontakt"> Kontakt </NuxtLink></li>
-      <li><NuxtLink to="cv"> CV </NuxtLink></li>
+      <li v-if="cv"><NuxtLink to="cv"> CV </NuxtLink></li>
       <li><NuxtLink class="impressum" to="#"> Impressum </NuxtLink></li>
     </ul>
     <div class="footer">

@@ -3,12 +3,14 @@ export const fetchData = async () => {
   const [
     { data: werke },
     { data: chronologie },
+    { data: cv },
     { data: projekte },
     { data: projektkategorien },
     { data: werktags },
   ] = await Promise.all([
     useAsyncData("werk", () => client.getAllByType("werk")),
     useAsyncData("chronologie", () => client.getSingle("chronologie")),
+    useAsyncData("cv", () => client.getSingle("cv")),
     useAsyncData("projekt", () =>
       client.getAllByType("projekt", {
         orderings: [
@@ -32,7 +34,14 @@ export const fetchData = async () => {
     useAsyncData("werktags", () => client.getAllByTag("film")),
   ]);
 
-  return { werke, chronologie, projekte, projektkategorien, werktags };
+  return {
+    werke,
+    chronologie,
+    cv,
+    projekte,
+    projektkategorien,
+    werktags,
+  };
 };
 
 export default fetchData;
