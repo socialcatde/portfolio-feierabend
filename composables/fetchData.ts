@@ -31,7 +31,7 @@ export const fetchData = async () => {
         ],
       })
     ),
-    useAsyncData("werktags", () => client.getAllByTag("film")),
+    useAsyncData("werktags", () => client.getTags()),
   ]);
 
   return {

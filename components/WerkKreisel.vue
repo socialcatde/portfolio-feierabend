@@ -1,5 +1,5 @@
 <script setup>
-const { werke, werktags } = await fetchData();
+const { werke } = await fetchData();
 const { currentProject, isActive, isWerkActive } = useClickKreisel();
 </script>
 
