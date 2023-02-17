@@ -1,1 +1,1 @@
-# Portfolio Website für Viktoria Feierabend
+# Portfolio Website for Artist Viktoria Feierabend
